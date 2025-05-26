@@ -1,0 +1,329 @@
+/* static/css/styles.css */
+:root {
+  --primary-color: #3a7bd5;
+  --secondary-color: #00d2ff;
+  --dark-color: #1a2a3a;
+  --light-color: #f8f9fa;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Navbar mejorada */
+.navbar {
+  background: linear-gradient(to right, var(--dark-color), #2c3e50);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: all 0.3s;
+}
+
+.navbar.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  background: linear-gradient(to right, #ffffff, #eeeeee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 8px 15px;
+  margin: 0 5px;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Hero Section mejorada */
+.hero-section {
+  background-color: var(--dark-color);
+  background-image: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .lead {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-section img {
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  max-height: 400px;
+  width: auto;
+  border-radius: 10px;
+}
+
+/* Tarjetas de categoría mejoradas */
+.category-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s;
+  margin-bottom: 30px;
+  background: white;
+  min-height: 200px;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-card .card-body {
+  padding: 25px;
+}
+
+.category-card .card-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+/* Galería mejorada */
+/* Estilos para la galería */
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px; /* Compensa el padding de los items */
+}
+
+.gallery-item {
+    padding: 15px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Relación 1:1 (cuadrado) */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio manteniendo proporciones */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+/* Footer mejorado */
+.footer {
+  background: linear-gradient(to right, var(--dark-color), #2c3e50);
+  color: white;
+  padding: 40px 0 20px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.footer h5 {
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer h5::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-color);
+  margin-top: 10px;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer .social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+}
+
+.footer .social-icons a:hover {
+  background: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* Botones mejorados */
+.btn {
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 4px 15px rgba(58, 123, 213, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(58, 123, 213, 0.6);
+}
+
+/* Efectos de scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 100px 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}

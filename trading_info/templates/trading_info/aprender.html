@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aprender - Bot de Trading Automatizado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="{% static 'css/styles-v2.css' %}" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar idéntica al original -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">{{ title }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/#home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/aprender">Aprender</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#binary-options">Opciones Binarias</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#resources">Recursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#gallery">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#about">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact">Contacto</a></li>
+</ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal con animaciones -->
+  <section class="container py-5 animate-on-scroll">
+    <h1 class="text-center mb-4 section-title mt-5 pt-4">Comportamiento del Sistema</h1>
+    <p class="text-center lead section-subtitle">Explora cómo funciona nuestro Bot de Trading Automatizado en tiempo real.</p>
+
+    <!-- Estadísticas de Rendimiento -->
+    <h2 class="text-center mb-4 section-title mt-5">Estadísticas de Rendimiento</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Tasa de Acierto</h5>
+            <p class="card-text">60% (objetivo)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Operaciones Ejecutadas</h5>
+            <p class="card-text">150 (últimos 30 días)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card category-card h-100 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Rentabilidad</h5>
+            <p class="card-text">+12% (mensual promedio)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Historial de Operaciones -->
+    <h2 class="text-center mb-4 section-title">Historial de Operaciones</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Fecha</th>
+            <th>Activo</th>
+            <th>Resultado</th>
+            <th>Estrategia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>24/05/2025</td>
+            <td>EUR/USD</td>
+            <td class="text-success">+5%</td>
+            <td>Trend Following</td>
+          </tr>
+          <tr>
+            <td>23/05/2025</td>
+            <td>GBP/JPY</td>
+            <td class="text-danger">-2%</td>
+            <td>Scalping</td>
+          </tr>
+          <tr>
+            <td>22/05/2025</td>
+            <td>USD/CAD</td>
+            <td class="text-success">+3%</td>
+            <td>Breakout</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Secciones adicionales -->
+    <div class="row mt-5">
+      <div class="col-md-6 mb-4">
+        <div class="card category-card h-100">
+          <div class="card-body">
+            <h5 class="card-title section-title"><i class="fas fa-chart-line me-2"></i>Análisis de Tendencias</h5>
+            <p class="card-text">El bot ha detectado una tendencia alcista en EUR/USD en los últimos 5 días. Se recomienda monitorear USD/CAD debido a su volatilidad reciente.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card category-card h-100">
+          <div class="card-body">
+            <h5 class="card-title section-title"><i class="fas fa-bell me-2"></i>Alertas y Notificaciones</h5>
+            <p class="card-text">Recibe alertas vía Telegram sobre oportunidades de trading. Puedes personalizar tus notificaciones.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card category-card h-100">
+          <div class="card-body">
+            <h5 class="card-title section-title"><i class="fas fa-cogs me-2"></i>Configuraciones del Usuario</h5>
+            <p class="card-text">Selecciona nivel de riesgo, pares de divisas y límites de inversión para personalizar tu experiencia.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card category-card h-100">
+          <div class="card-body">
+            <h5 class="card-title section-title"><i class="fas fa-heartbeat me-2"></i>Estado del Sistema</h5>
+            <p class="card-text">Estado: <span class="text-success">Activo</span> | Operaciones en curso: 3 | Última actualización: 25/05/2025 18:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer idéntico al original -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row footer-content">
+        <div class="col-md-4 footer-col">
+          <h5><i class="fas fa-link me-2"></i>Enlaces Útiles</h5>
+          <ul class="list-unstyled">
+            <li><a href="#learn-trading"><i class="fas fa-chevron-right me-2"></i>Aprender Trading</a></li>
+            <li><a href="#binary-options"><i class="fas fa-chevron-right me-2"></i>Opciones Binarias</a></li>
+            <li><a href="#resources"><i class="fas fa-chevron-right me-2"></i>Recursos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h5><i class="fas fa-envelope me-2"></i>Contacto</h5>
+          <p><a href="https://t.me/tradingbot_support" target="_blank"><i class="fab fa-telegram me-2"></i>@TradingBotSupport</a></p>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h5><i class="fas fa-share-alt me-2"></i>Síguenos</h5>
+          <div class="social-icons">
+            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="text-center mb-0"><i class="far fa-copyright me-2"></i>2025 Bot de Trading. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Animación al hacer scroll (igual que en el original)
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

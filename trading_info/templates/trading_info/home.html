@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% load static %}
+    <!-- CSS y librerías -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="{% static 'css/styles-v2.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Estilos para el botón de WhatsApp -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .whatsapp-float button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .whatsapp-float button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("h7FwCBxNaslEiwlHG");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navbar Mejorada -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">{{ title }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#learn-trading">Aprender Trading</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#binary-options">Opciones Binarias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Recursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mejorada -->
+    <section id="home" class="hero-section text-center">
+        <div class="container position-relative">
+            <div class="hero-content animate-on-scroll">
+                <img src="{% static 'images/logo.png' %}" alt="Trading Dashboard" class="img-fluid hero-image mb-4">
+                <h1 class="animate__animated animate__fadeIn">{{ title }}</h1>
+                <p class="lead animate__animated animate__fadeIn animate__delay-1s">{{ slogan }}</p>
+                <a href="/aprender" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                  Comenzar a aprender
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aprender Trading -->
+    <section id="learn-trading" class="py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Aprender Trading</h2>
+            <p class="text-center section-subtitle">El trading es el acto de comprar y vender activos financieros para obtener ganancias.</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card category-card h-100">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Conceptos Básicos" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Conceptos Básicos</h5>
+                            <p class="card-text">Entiende términos como oferta, demanda, y análisis técnico.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card category-card h-100">
+                        <img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Estrategias" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Estrategias</h5>
+                            <p class="card-text">Explora estrategias como day trading y swing trading.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card category-card h-100">
+                        <img src="{% static 'images/imgAnalisis.jpg' %}" alt="Trading Dashboard" class="img-fluid hero-image mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Herramientas</h5>
+                            <p class="card-text">Conoce plataformas y gráficos para operar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opciones Binarias -->
+    <section id="binary-options" class="py-5 bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">¿Qué son las Opciones Binarias?</h2>
+            <p class="text-center section-subtitle">Predice si el precio de un activo subirá o bajará en un tiempo determinado.</p>
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <div class="card category-card h-100">
+                        <img src="{% static 'images/imgFuncion.png' %}" alt="Trading Dashboard" class="img-fluid hero-image mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cómo Funcionan</h5>
+                            <p class="card-text">Elige un activo, establece un tiempo de expiración y predice el movimiento del precio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card category-card h-100">
+                        <img src="{% static 'images/imgRiesgos.png' %}" alt="Trading Dashboard" class="img-fluid hero-image mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Riesgos</h5>
+                            <p class="card-text">Aprende a gestionar el riesgo para proteger tu capital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos Educativos -->
+    <section id="resources" class="py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Recursos para Aprender</h2>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Investopedia</h5>
+                            <p class="card-text"><a href="https://www.investopedia.com" target="_blank">www.investopedia.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">BabyPips</h5>
+                            <p class="card-text"><a href="https://www.babypips.com" target="_blank">www.babypips.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card resource-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fab fa-youtube fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">YouTube</h5>
+                            <p class="card-text"><a href="https://www.youtube.com/results?search_query=trading+tutorials" target="_blank">Tutoriales de Trading</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Imágenes -->
+    <section id="gallery" class="py-5 bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Galería de Trading</h2>
+            <div class="row gallery-row">
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="{% static 'images/imgGaleria1.png' %}" alt="Trading Dashboard" class="img-fluid gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="{% static 'images/imgGaleria2.png' %}" alt="Trading Dashboard" class="img-fluid gallery-image">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="gallery-item">
+                        <img src="{% static 'images/imgGaleria3.png' %}" alt="Trading Dashboard" class="img-fluid gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="about" class="py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Sobre Nosotros</h2>
+            <div class="row about-content">
+                <div class="col-md-6 mb-4">
+                    <div class="about-card">
+                        <h4><i class="fas fa-bullseye me-2"></i>Misión</h4>
+                        <p>Proporcionar una solución tecnológica innovadora que permita a traders de todos los niveles generar ganancias en el mercado financiero mediante un bot de trading automatizado.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="about-card">
+                        <h4><i class="fas fa-eye me-2"></i>Visión</h4>
+                        <p>Convertirse en el bot de trading automatizado líder en el mercado financiero global reconocido por su precisión y accesibilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto - Versión con EmailJS -->
+    <section id="contact" class="py-5 bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">Contáctanos</h2>
+            <p class="text-center contact-info">
+                <i class="fab fa-telegram me-2"></i>
+                <a href="https://t.me/tradingbot_support" target="_blank">@TradingBotSupport</a>
+            </p>
+            <form id="contactForm" class="contact-form mt-5">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="name" name="from_name" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="email" name="from_email" class="form-control" placeholder="Correo" required>
+                    </div>
+                    <div class="col-12">
+                        <textarea id="message" name="message" class="form-control" placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div id="formAlert" class="alert mt-3 text-center" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-md-4 footer-col">
+                    <h5><i class="fas fa-link me-2"></i>Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#learn-trading"><i class="fas fa-chevron-right me-2"></i>Aprender Trading</a></li>
+                        <li><a href="#binary-options"><i class="fas fa-chevron-right me-2"></i>Opciones Binarias</a></li>
+                        <li><a href="#resources"><i class="fas fa-chevron-right me-2"></i>Recursos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h5><i class="fas fa-envelope me-2"></i>Contacto</h5>
+                    <p><a href="https://t.me/tradingbot_support" target="_blank"><i class="fab fa-telegram me-2"></i>@TradingBotSupport</a></p>
+                </div>
+                <div class="col-md-4 footer-col">
+                    <h5><i class="fas fa-share-alt me-2"></i>Síguenos</h5>
+                    <div class="social-icons">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="text-center mb-0"><i class="far fa-copyright me-2"></i>2025 Bot de Trading. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+593983210481" target="_blank">
+            <button><i class="fab fa-whatsapp"></i></button>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animación al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scrolling para enlaces
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Configuración del formulario de contacto con EmailJS
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const formAlert = document.getElementById('formAlert');
+                
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...';
+                submitBtn.disabled = true;
+                
+                const serviceID = 'service_yq9foyp';
+                const templateID = 'template_o7zv91f';
+
+                emailjs.send(serviceID, templateID, {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    message: document.getElementById('message').value,
+                    reply_to: document.getElementById('email').value
+                })
+                .then(function(response) {
+                    formAlert.style.display = 'block';
+                    formAlert.className = 'alert alert-success mt-3 text-center';
+                    formAlert.textContent = 'Mensaje enviado con éxito. ¡Gracias por contactarnos!';
+                    document.getElementById('contactForm').reset();
+                    setTimeout(() => {
+                        formAlert.style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    formAlert.style.display = 'block';
+                    formAlert.className = 'alert alert-danger mt-3 text-center';
+                    formAlert.textContent = 'Error al enviar el mensaje. Por favor, inténtalo nuevamente.';
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    submitBtn.textContent = 'Enviar Mensaje';
+                    submitBtn.disabled = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
